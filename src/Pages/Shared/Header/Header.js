@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import logo from '../../../images/logo.png'
 import { Link } from 'react-router-dom';
+import { Home, Login } from '@mui/icons-material';
 
 const Header = () => {
     return (
@@ -15,25 +16,22 @@ const Header = () => {
                     <Typography variant="h4" component="div" sx={ { flexGrow: 1, textAlign: 'left' } }>
                         Watch Your Wrist
                     </Typography>
-                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } } to="/home">Home</Link>
-                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } } to="/watches">All Watches</Link>
-                    <Link
-                        style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
-                        to="/about"
-                    >
+                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } } to="/home">
+                        <Home></Home>
+                    </Link>
+                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } } to="/watches">
+                        All Watches</Link>
+                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
+                        to="/about">
                         About Us
                     </Link>
-                    <Link
-                        style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
-                        to="/contact"
-                    >
+                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
+                        to="/contact">
                         Contact Us
                     </Link>
-                    <Link
-                        style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
-                        to="/login"
-                    >
-                        Login
+                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
+                        to="/login">
+                        <Login></Login>
                     </Link>
                 </Toolbar>
             </AppBar>
