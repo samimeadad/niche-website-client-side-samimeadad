@@ -3,15 +3,16 @@ import React from 'react';
 import useWatches from '../../../Hooks/useWatches';
 import Watch from '../../Watches/Watch/Watch';
 
-const PremiumWatches = () => {
+const MenWatches = () => {
     const [ watches ] = useWatches();
-    const premiumWatches = watches.filter( watch => watch.premium === "true" );
+    const menWatches = watches.filter( watch => watch.gender === "m" );
+
     return (
-        <Container sx={ { my: 20 } }>
-            <Typography variant="h3" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold' } }>Our Exclusive Collections</Typography>
+        <Container>
+            <Typography variant="h2" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold', color: '#CD5C5C' } }>Mens Collections</Typography>
             <Grid container spacing={ 4 }>
                 {
-                    premiumWatches.map( watch => <Watch
+                    menWatches.map( watch => <Watch
                         key={ watch.id }
                         watch={ watch }>
                     </Watch> )
@@ -21,4 +22,4 @@ const PremiumWatches = () => {
     );
 };
 
-export default PremiumWatches;
+export default MenWatches;

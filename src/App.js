@@ -12,6 +12,8 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login';
 import Watches from './Pages/Watches/Watches/Watches';
+import MenWatches from './Pages/Home/Gender/MenWatches';
+import WomenWatches from './Pages/Home/Gender/WomenWatches';
 
 function App () {
   return (
@@ -26,6 +28,12 @@ function App () {
         </Route>
         <Route path="/watches">
           <Watches></Watches>
+        </Route>
+        <Route path="/menWatches">
+          <MenWatches></MenWatches>
+        </Route>
+        <Route path="/womenWatches">
+          <WomenWatches></WomenWatches>
         </Route>
         <Route path="/about">
           <About></About>
