@@ -7,7 +7,7 @@ const Watches = () => {
     const [ watches ] = useWatches()
     return (
         <Container>
-            <Typography variant="h2" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold' } }>Our Collections</Typography>
+            <Typography variant="h2" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold', color: '#CD5C5C' } }>Our Collections</Typography>
             <Grid container spacing={ 4 }>
                 {
                     watches.map( watch => <Watch

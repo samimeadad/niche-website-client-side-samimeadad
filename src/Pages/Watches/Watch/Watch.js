@@ -18,13 +18,13 @@ const Watch = ( props ) => {
                     alt="green iguana"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={ { fontWeight: 'bold' } }>
+                    <Typography gutterBottom variant="h5" component="div" sx={ { fontWeight: 'bold', color: '#CD5C5C' } }>
                         { name }
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                         { description.slice( 0, 150 ) }
                     </Typography>
-                    <Typography variant="h5" sx={ { color: 'red', fontWeight: 900 } }>
+                    <Typography variant="h5" sx={ { color: '#CD5C5C', fontWeight: 900 } }>
                         <span>USD </span>{ price }
                     </Typography>
                 </CardContent>

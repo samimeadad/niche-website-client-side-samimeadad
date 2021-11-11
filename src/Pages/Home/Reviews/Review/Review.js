@@ -13,13 +13,13 @@ const Review = ( props ) => {
         <Grid item xs={ 12 } sm={ 12 } md={ 3 } lg={ 3 }>
             <Card sx={ { maxWidth: 350, minHeight: 100 } }>
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={ { fontWeight: 'bold' } }>
+                    <Typography gutterBottom variant="h5" component="div" sx={ { fontWeight: 'bold', color: '#CD5C5C' } }>
                         { name }
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                         { description.slice( 0, 100 ) }
                     </Typography>
-                    <Typography variant="h6" sx={ { color: 'red' } }>
+                    <Typography variant="h6" sx={ { color: '#CD5C5C' } }>
                         <span>Rating: </span>{ rating }
                     </Typography>
                     <Stack spacing={ 1 }>

@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import BannerCarousel from '../Banner/BannerCarousel';
 import PremiumWatches from '../PremiumWatches/PremiumWatches';
 import Reviews from '../Reviews/Reviews/Reviews';
+import Subscribe from '../Subscribe/Subscribe';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <PremiumWatches></PremiumWatches>
             <Reviews></Reviews>
+            <Subscribe></Subscribe>
         </Box>
     );
 };
