@@ -53,20 +53,20 @@ const Login = () => {
                             variant="standard"
                         />
                         <Button
-                            sx={ { width: 1, m: 1 } }
+                            sx={ { width: 1, m: 1, backgroundColor: "#3B4DE2" } }
                             variant="contained"
                             color="primary"
                             type="submit"
                         >
                             Login
                         </Button>
-                        <NavLink style={ { textDecoration: 'none' } } to="/register"><Button variant="text">New User? Please Register</Button></NavLink>
+                        <NavLink style={ { textDecoration: 'none' } } to="/register"><Button variant="text" sx={ { color: '#3B4DE2' } }>New User? Please Register</Button></NavLink>
                         { isLoading && <CircularProgress /> }
                         { user?.email && <Alert severity="success">User Logged-in Successfully!</Alert> }
                         { authError && <Alert severity="error">{ authError }</Alert> }
                     </form>
                     <p>-----------------------------------------------------</p>
-                    <Button onClick={ handleGoogleSignIn } variant="contained">Google Sign In</Button>
+                    <Button onClick={ handleGoogleSignIn } variant="contained" sx={ { backgroundColor: '#3B4DE2' } }>Google Sign In</Button>
                 </Grid>
                 <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
                     <img style={ { width: '100%' } } src={ loginImage } alt="loginImage" />

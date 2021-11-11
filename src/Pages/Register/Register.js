@@ -24,7 +24,9 @@ const Register = () => {
             alert( 'Password Not Matched' );
             return;
         }
-        registerUser( registerData.email, registerData.password, registerData.name, history );
+        else {
+            registerUser( registerData.email, registerData.password, registerData.name, history );
+        }
         e.preventDefault();
     }
 
@@ -53,6 +55,7 @@ const Register = () => {
                             name="email"
                             onBlur={ handleOnBlur }
                             variant="standard"
+                            required
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
@@ -62,6 +65,7 @@ const Register = () => {
                             name="password"
                             onBlur={ handleOnBlur }
                             variant="standard"
+                            required
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
@@ -71,6 +75,7 @@ const Register = () => {
                             name="passwordConfirm"
                             onBlur={ handleOnBlur }
                             variant="standard"
+                            required
                         />
                         <Button
                             sx={ { width: 1, m: 1, backgroundColor: '#CD5C5C' } }

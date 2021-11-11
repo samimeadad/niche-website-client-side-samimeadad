@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer style={ { backgroundColor: "#17202A" } }>
             <Box sx={ { mx: 5, px: 2, py: 3 } }>
-                <Typography variant="h4" sx={ { textAlign: 'center', fontWeight: 'bold', color: '#CD5C5C' } }>Watch Your Wrist</Typography>
+                <Typography variant="h4" sx={ { textAlign: 'center', fontWeight: 'bold', color: 'yellow' } }>Watch Your Wrist</Typography>
                 <Link to="/" style={ { display: 'flex', justifyContent: 'center', marginBottom: "2rem" } }><img style={ { width: "120px" } } src={ logo } alt="logoImage" /></Link>
                 <Grid container spacing={ 2 }>
                     <Grid item xs={ 12 } sm={ 12 } md={ 3 } lg={ 3 }>

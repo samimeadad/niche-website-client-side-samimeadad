@@ -39,7 +39,14 @@ const Header = () => {
                             <Login></Login>
                         </Link>
                             :
-                            <Button onClick={ logOut }>Logout <span>{ user.name }</span></Button>
+                            <Box>
+                                <Button
+                                    sx={ { width: 1, m: 1, backgroundColor: '#CD5C5C' } }
+                                    variant="contained"
+                                    color="error"
+                                    onClick={ logOut }
+                                >Logout <span style={ { color: 'yellow', marginLeft: '5px' } }>{ user.displayName }</span> </Button>
+                            </Box>
                     }
                 </Toolbar>
             </AppBar>

@@ -6,9 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const Watch = ( props ) => {
-    const { name, description, price, image } = props.watch;
+    const { id, name, description, price, image } = props.watch;
+
     return (
         <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 }>
             <Card sx={ { maxWidth: 345, maxHeight: "100%" } }>
@@ -29,8 +31,7 @@ const Watch = ( props ) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+                    <Link to={ `/watch/${ id }` } style={ { textDecoration: 'none', marginLeft: 5 } }><Button variant="contained" color="error" sx={ { backgroundColor: '#CD5C5C' } }>Purchase</Button></Link>
                 </CardActions>
             </Card>
         </Grid>

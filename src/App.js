@@ -16,6 +16,8 @@ import MenWatches from './Pages/Home/Gender/MenWatches';
 import WomenWatches from './Pages/Home/Gender/WomenWatches';
 import Register from './Pages/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import SelectedWatch from './Pages/Watches/SelectedWatch/SelectedWatch';
 
 function App () {
   return (
@@ -38,6 +40,9 @@ function App () {
           <Route path="/womenWatches">
             <WomenWatches></WomenWatches>
           </Route>
+          <PrivateRoute exact path="/watch/:watchId">
+            <SelectedWatch></SelectedWatch>
+          </PrivateRoute>
           <Route path="/about">
             <About></About>
           </Route>

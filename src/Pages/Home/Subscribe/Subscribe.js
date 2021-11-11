@@ -13,11 +13,11 @@ const Subscribe = () => {
                         <Grid container spacing={ 2 }>
                             <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 }>
                                 <form>
-                                    <TextField id="outlined-basic" label="Your Email" variant="outlined" fullWidth />
+                                    <TextField id="outlined-basic" label="Please enter your email here" variant="outlined" fullWidth />
                                 </form>
                             </Grid>
                             <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 }>
-                                <Button variant="contained" color="primary" sx={ { px: 4, py: 2 } }>Subscribe</Button>
+                                <Button variant="contained" color="primary" sx={ { px: 4, py: 2, backgroundColor: '#CD5C5C' } }>Subscribe</Button>
                             </Grid>
                         </Grid>
                     </Box>

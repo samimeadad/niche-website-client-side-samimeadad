@@ -6,7 +6,7 @@ import Watch from '../Watch/Watch';
 const Watches = () => {
     const [ watches ] = useWatches()
     return (
-        <Container>
+        <Container sx={ { my: 10 } }>
             <Typography variant="h2" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold', color: '#CD5C5C' } }>Our Collections</Typography>
             <Grid container spacing={ 4 }>
                 {
