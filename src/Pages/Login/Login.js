@@ -31,8 +31,8 @@ const Login = () => {
         <Container sx={ { my: 10 } }>
             <Grid container spacing={ 2 }>
                 <Grid item sx={ { mt: 10 } } xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
-                    <Typography sx={ { m: 1 } } variant="h6" gutterBottom component="div">
-                        Login
+                    <Typography sx={ { m: 1 } } variant="h4" gutterBottom component="div">
+                        Please Login Here
                     </Typography>
                     <form onSubmit={ handleLoginFormSubmit }>
                         <TextField
