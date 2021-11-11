@@ -8,7 +8,7 @@ const PremiumWatches = () => {
     const premiumWatches = watches.filter( watch => watch.premium === "true" );
     return (
         <Container sx={ { my: 8 } }>
-            <Typography variant="h4" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold' } }>Our Exclusive Collections</Typography>
+            <Typography variant="h3" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold' } }>Our Exclusive Collections</Typography>
             <Grid container spacing={ 4 }>
                 {
                     premiumWatches.map( watch => <Watch

@@ -3,6 +3,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import BannerCarousel from '../Banner/BannerCarousel';
 import PremiumWatches from '../PremiumWatches/PremiumWatches';
+import Reviews from '../Reviews/Reviews/Reviews';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <BannerCarousel></BannerCarousel>
             <Banner></Banner>
             <PremiumWatches></PremiumWatches>
+            <Reviews></Reviews>
         </Box>
     );
 };
