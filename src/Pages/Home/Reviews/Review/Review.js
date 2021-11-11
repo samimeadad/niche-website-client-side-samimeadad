@@ -3,6 +3,8 @@ import { Grid } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 
 const Review = ( props ) => {
     const { name, description, rating } = props.review;
@@ -17,9 +19,12 @@ const Review = ( props ) => {
                     <Typography variant="body1" color="text.secondary">
                         { description.slice( 0, 100 ) }
                     </Typography>
-                    <Typography variant="h5" sx={ { color: 'red', fontWeight: 900 } }>
+                    <Typography variant="h6" sx={ { color: 'red' } }>
                         <span>Rating: </span>{ rating }
                     </Typography>
+                    <Stack spacing={ 1 }>
+                        <Rating name="half-rating-read" defaultValue={ rating } precision={ .05 } readOnly />
+                    </Stack>
                 </CardContent>
             </Card>
         </Grid>
