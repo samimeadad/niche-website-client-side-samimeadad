@@ -5,7 +5,7 @@ const useWatches = () => {
     const [ watches, setWatches ] = useState( [] );
 
     useEffect( () => {
-        fetch( '/watches.json' )
+        fetch( 'http://localhost:5001/watches' )
             .then( res => res.json() )
             .then( data => setWatches( data ) );
     }, [] );
