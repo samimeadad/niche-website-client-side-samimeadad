@@ -31,7 +31,7 @@ const Subscribe = () => {
                                 <Link to={ { pathname: "https://www.twitter.com/" } } target="_blank" rel="noreferrer"><Twitter sx={ { color: 'skyblue', marginRight: '1rem', fontSize: '4rem' } }></Twitter></Link>
                                 <Link to={ { pathname: "https://www.instagram.com/" } } target="_blank" rel="noreferrer"><Instagram sx={ { marginRight: '1rem', fontSize: '4rem' } }></Instagram></Link>
                                 <Link to={ { pathname: "https://www.linkedin.com/" } } target="_blank" rel="noreferrer"><LinkedIn sx={ { color: '#192895', marginRight: '1rem', fontSize: '4rem' } }></LinkedIn></Link>
-                                <Link to={ { pathname: "https://www.facebook.com/" } } target="_blank" rel="noreferrer"><YouTube sx={ { color: 'red', marginRight: '1rem', fontSize: '4rem' } }></YouTube></Link>
+                                <Link to={ { pathname: "https://www.youtube.com/" } } target="_blank" rel="noreferrer"><YouTube sx={ { color: 'red', marginRight: '1rem', fontSize: '4rem' } }></YouTube></Link>
                             </Grid>
                         </Grid>
                     </Box>

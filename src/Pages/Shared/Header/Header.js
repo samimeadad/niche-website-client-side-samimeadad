@@ -6,8 +6,12 @@ import Typography from '@mui/material/Typography';
 import logo from '../../../images/logo.png';
 import { Link } from 'react-router-dom';
 import { Home, Login } from '@mui/icons-material';
+import useAuth from '../../../Hooks/useAuth';
+import { Button } from '@mui/material';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
+
     return (
         <Box sx={ { width: '100%' } }>
             <AppBar position="static" sx={ { backgroundColor: "#17202A", width: "100%" } }>
@@ -29,10 +33,14 @@ const Header = () => {
                         to="/contact">
                         Contact Us
                     </Link>
-                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
-                        to="/login">
-                        <Login></Login>
-                    </Link>
+                    {
+                        !user.email ? <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
+                            to="/login">
+                            <Login></Login>
+                        </Link>
+                            :
+                            <Button onClick={ logOut }>Logout <span>{ user.name }</span></Button>
+                    }
                 </Toolbar>
             </AppBar>
         </Box>
