@@ -8,15 +8,15 @@ const Subscribe = () => {
         <Container sx={ { my: 10, width: '100%', textAlign: 'center' } }>
             <Grid container spacing={ 2 }>
                 <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
-                    <Box>
+                    <Box sx={ { marginRight: 10 } }>
                         <Typography variant="h4" sx={ { fontWeight: 'bold', mb: 4, textAlign: 'left', color: '#CD5C5C' } }>Please Subscribe Here</Typography>
                         <Grid container spacing={ 2 }>
-                            <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
+                            <Grid item xs={ 12 } sm={ 12 } md={ 8 } lg={ 8 }>
                                 <form>
                                     <TextField id="outlined-basic" label="Your Email" variant="outlined" fullWidth />
                                 </form>
                             </Grid>
-                            <Grid item xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
+                            <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 }>
                                 <Button variant="contained" color="primary" sx={ { px: 4, py: 2 } }>Subscribe</Button>
                             </Grid>
                         </Grid>

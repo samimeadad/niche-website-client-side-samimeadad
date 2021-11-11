@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import logo from '../../../images/logo.png'
+import logo from '../../../images/logo.png';
 import { Link } from 'react-router-dom';
 import { Home, Login } from '@mui/icons-material';
 
