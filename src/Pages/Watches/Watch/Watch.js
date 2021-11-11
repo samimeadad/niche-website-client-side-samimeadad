@@ -26,7 +26,7 @@ const Watch = ( props ) => {
                     <Typography variant="body1" color="text.secondary">
                         { description.slice( 0, 150 ) }
                     </Typography>
-                    <Typography variant="h5" sx={ { color: '#CD5C5C', fontWeight: 900 } }>
+                    <Typography variant="h5" sx={ { mt: 2, color: '#CD5C5C', fontWeight: 900 } }>
                         <span>USD </span>{ price }
                     </Typography>
                 </CardContent>
