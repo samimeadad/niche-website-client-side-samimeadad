@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// custom hook for specialists api call
+// custom hook for watches api call
 const useWatches = () => {
     const [ watches, setWatches ] = useState( [] );
 
@@ -10,7 +10,7 @@ const useWatches = () => {
             .then( data => setWatches( data ) );
     }, [] );
 
-    //return doctors/specialists state variable and setDoctors function
+    //return watches state variable and setWatches function
     return [ watches, setWatches ];
 }
 

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
 const Watch = ( props ) => {
-    const { id, name, description, price, image } = props.watch;
+    const { _id, name, description, price, image } = props.watch;
 
     return (
         <Grid item xs={ 12 } sm={ 12 } md={ 4 } lg={ 4 }>
@@ -31,7 +31,7 @@ const Watch = ( props ) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Link to={ `/watch/${ id }` } style={ { textDecoration: 'none', marginLeft: 5 } }><Button variant="contained" color="error" sx={ { backgroundColor: '#CD5C5C' } }>Purchase</Button></Link>
+                    <Link to={ `/watch/${ _id }` } style={ { textDecoration: 'none', marginLeft: 5 } }><Button variant="contained" color="error" sx={ { backgroundColor: '#CD5C5C' } }>Purchase</Button></Link>
                 </CardActions>
             </Card>
         </Grid>

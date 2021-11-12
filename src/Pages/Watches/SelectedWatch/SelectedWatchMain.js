@@ -9,7 +9,7 @@ const SelectedWatchMain = () => {
     const [ watches ] = useWatches();
     const { user } = useAuth();
     const history = useHistory();
-    const clickedWatch = watches.find( watch => watch.id === watchId );
+    const clickedWatch = watches.find( watch => watch._id === watchId );
 
     const [ orderData, setOrderData ] = useState( {} );
 
@@ -33,7 +33,7 @@ const SelectedWatchMain = () => {
             .then( res => res.json() )
             .then( data => {
                 if ( data.insertedId ) {
-                    alert( 'Your order is placed successfully. Please wait for approval. Thank you.' );
+                    alert( 'Your order is placed successfully. Please wait for the approval. Thank you.' );
                 }
             } )
         e.preventDefault();
