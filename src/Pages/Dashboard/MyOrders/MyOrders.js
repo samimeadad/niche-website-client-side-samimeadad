@@ -19,7 +19,7 @@ const MyOrders = () => {
     const deleteOrder = ( id ) => {
         const proceed = window.confirm( "Are you sure to delete the booking data?" );
         if ( proceed ) {
-            const url = `http://localhost:5001/orders/${ id }`;
+            const url = `https://damp-ridge-22727.herokuapp.com/orders/${ id }`;
             fetch( url, {
                 method: 'DELETE'
             } )

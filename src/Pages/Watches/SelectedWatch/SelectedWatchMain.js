@@ -23,7 +23,7 @@ const SelectedWatchMain = () => {
     }
 
     const handlePlaceOrder = ( e ) => {
-        fetch( 'http://localhost:5001/orders', {
+        fetch( 'https://damp-ridge-22727.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

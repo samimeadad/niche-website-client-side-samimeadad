@@ -93,7 +93,7 @@ const useFirebase = () => {
     const saveUserToDb = ( email, displayName, method ) => {
         const user = { email, displayName };
         console.log( user );
-        fetch( 'http://localhost:5001/users', {
+        fetch( 'https://damp-ridge-22727.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

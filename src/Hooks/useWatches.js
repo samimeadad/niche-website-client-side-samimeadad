@@ -5,7 +5,7 @@ const useWatches = () => {
     const [ watches, setWatches ] = useState( [] );
 
     useEffect( () => {
-        fetch( 'http://localhost:5001/watches' )
+        fetch( 'https://damp-ridge-22727.herokuapp.com/watches' )
             .then( res => res.json() )
             .then( data => setWatches( data ) );
     }, [] );
