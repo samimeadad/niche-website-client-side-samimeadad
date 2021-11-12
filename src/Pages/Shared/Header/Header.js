@@ -47,7 +47,7 @@ const Header = () => {
                         </Link>
                             :
                             <Box sx={ { display: 'flex' } }>
-                                <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px', marginTop: '10px' } }>Dashboard</Link>
+                                <Link to="/dashboard" style={ { textDecoration: 'none', color: 'white', margin: '1rem' } }>Dashboard</Link>
                                 <Button
                                     sx={ { backgroundColor: '#CD5C5C' } }
                                     variant="contained"

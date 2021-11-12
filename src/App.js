@@ -18,6 +18,7 @@ import Register from './Pages/Register/Register';
 import AuthProvider from './Contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import SelectedWatch from './Pages/Watches/SelectedWatch/SelectedWatch';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App () {
   return (
@@ -40,8 +41,11 @@ function App () {
           <Route path="/womenWatches">
             <WomenWatches></WomenWatches>
           </Route>
-          <PrivateRoute exact path="/watch/:watchId">
+          <PrivateRoute path="/watch/:watchId">
             <SelectedWatch></SelectedWatch>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
           <Route path="/about">
             <About></About>
