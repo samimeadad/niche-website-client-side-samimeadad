@@ -38,7 +38,7 @@ const MyReview = () => {
             <Typography variant="h5" sx={ { mt: 4, mb: 1 } }>Please submit the below form to post your valuable feedback</Typography>
             <form>
                 <TextField
-                    sx={ { width: 1, mb: 1 } }
+                    sx={ { width: 1, mb: 2 } }
                     id="nameInput"
                     type="text"
                     name="name"
@@ -48,7 +48,7 @@ const MyReview = () => {
                     onBlur={ handleOnBlur }
                 />
                 <TextField
-                    sx={ { width: 1 } }
+                    sx={ { width: 1, mb: 2 } }
                     id="reviewInput"
                     type="text"
                     name="reviewInput"
@@ -56,6 +56,16 @@ const MyReview = () => {
                     required
                     multiline
                     rows={ 5 }
+                    onBlur={ handleOnBlur }
+                />
+                <TextField
+                    sx={ { width: 1 } }
+                    id="ratingInput"
+                    type="text"
+                    name="rating"
+                    label="Please give a rating from 1 to 5 (1=Poor, 5=Excellent)"
+                    defaultValue={ 5 }
+                    required
                     onBlur={ handleOnBlur }
                 />
                 <Button onClick={ handleReviewSubmit } type="submit" variant="contained" color="primary" sx={ { mt: 4 } }>Post Your Review</Button>
