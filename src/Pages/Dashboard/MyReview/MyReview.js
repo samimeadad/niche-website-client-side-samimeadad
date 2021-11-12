@@ -63,7 +63,7 @@ const MyReview = () => {
                     id="ratingInput"
                     type="text"
                     name="rating"
-                    label="Please give a rating from 1 to 5 (1=Poor, 5=Excellent)"
+                    label="Please give a rating from 1 to 5 (1=Poor, 1.5=Poor, 2=Ok, 2.5=Below Average, 3=Average, 3.5=Above Average, 4=Good, 5=Excellent)"
                     defaultValue={ 5 }
                     required
                     onBlur={ handleOnBlur }

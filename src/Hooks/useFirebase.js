@@ -9,7 +9,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const [ isLoading, setIsLoading ] = useState( true );
     const [ authError, setAuthError ] = useState( '' );
-    // const [ admin, setAdmin ] = useState( false );
+    const [ admin, setAdmin ] = useState( false );
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -92,7 +92,6 @@ const useFirebase = () => {
 
     const saveUserToDb = ( email, displayName, method ) => {
         const user = { email, displayName };
-        console.log( user );
         fetch( 'https://damp-ridge-22727.herokuapp.com/users', {
             method: method,
             headers: {
@@ -108,11 +107,12 @@ const useFirebase = () => {
             } )
     }
 
-    // useEffect( () => {
-    //     fetch( `https://salty-reef-03503.herokuapp.com/users/${ user.email }` )
-    //         .then( res => res.json() )
-    //         .then( data => setAdmin( data.admin ) )
-    // }, [ user.email ] )
+    //Collect the user information to check the user is admin or not
+    useEffect( () => {
+        fetch( `https://damp-ridge-22727.herokuapp.com/users/${ user.email }` )
+            .then( res => res.json() )
+            .then( data => setAdmin( data.admin ) )
+    }, [ user.email ] )
 
     const logOut = () => {
         setIsLoading( true );
@@ -126,6 +126,7 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
         isLoading,
         authError,
         registerUser,

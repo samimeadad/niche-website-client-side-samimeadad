@@ -16,11 +16,16 @@ import DashboardBody from '../DashboardBody/DashboardBody';
 import Payment from '../Payment/Payment';
 import MyOrders from '../MyOrders/MyOrders';
 import MyReview from '../MyReview/MyReview';
+import AdminRoute from '../AdminRoute/AdminRoute';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddWatch from '../AddWatch/AddWatch';
+import ManageAllWatches from '../ManageAllWatches/ManageAllWatches';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 
 const drawerWidth = 200;
 
 const Dashboard = ( props ) => {
-    const { user, logOut } = useAuth();
+    const { user, logOut, admin } = useAuth();
     let { path, url } = useRouteMatch();
 
     const { window } = props;
@@ -33,17 +38,32 @@ const Dashboard = ( props ) => {
     const drawer = (
         <Box sx={ { backgroundColor: '#17202A', height: 1 } }>
             <Toolbar />
-            <Typography variant="h6" sx={ { mb: 4, textAlign: 'center', color: 'white' } }>Navigation Menu</Typography>
+            {
+                admin ? <Typography variant="h6" sx={ { mb: 4, textAlign: 'center', color: 'orange' } }>Admin Menu</Typography>
+                    :
+                    <Typography variant="h6" sx={ { mb: 4, textAlign: 'center', color: 'white' } }>User Menu</Typography>
+            }
             <Divider sx={ { backgroundColor: "gray" } } />
-            <Box sx={ { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', color: 'white' } }>
-                <Link to="/home" style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>Home</Button></Link>
-                <Link to={ `${ url }` } style={ { textDecoration: 'none' } }><Button color='inherit'>Dashboard</Button></Link>
-                <Link to={ `${ url }/payment` } style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>Payment</Button></Link>
-                <Link to={ `${ url }/myOrders` } style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>My Orders</Button></Link>
-                <Link to={ `${ url }/review` } style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>Give a Review</Button></Link>
-                <Button onClick={ logOut } color='inherit'>Logout</Button>
-            </Box>
+            {
+                !admin && <Box sx={ { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', color: 'white' } }>
+                    <Link to="/home" style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>Home</Button></Link>
+                    <Link to={ `${ url }` } style={ { textDecoration: 'none' } }><Button color='inherit'>Dashboard</Button></Link>
+                    <Link to={ `${ url }/payment` } style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>Payment</Button></Link>
+                    <Link to={ `${ url }/myOrders` } style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>My Orders</Button></Link>
+                    <Link to={ `${ url }/review` } style={ { textDecoration: 'none', color: 'white' } }><Button color='inherit'>Give a Review</Button></Link>
+                    <Button onClick={ logOut } color='inherit'>Logout</Button>
+                </Box>
+            }
             <Divider sx={ { backgroundColor: "gray" } } />
+            {
+                admin && <Box sx={ { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' } }>
+                    <Link to={ `${ url }/makeAdmin` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Make Admin</Button></Link>
+                    <Link to={ `${ url }/addWatch` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Add Watch</Button></Link>
+                    <Link to={ `${ url }/manageAllWatches` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Manage All Watches</Button></Link>
+                    <Link to={ `${ url }/manageAllOrders` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Manage All Orders</Button></Link>
+                    <Button onClick={ logOut } sx={ { color: 'orange' } }>Logout</Button>
+                </Box>
+            }
         </Box>
     );
 
@@ -71,7 +91,7 @@ const Dashboard = ( props ) => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Your are login as <span style={ { color: "yellow" } }>{ user.displayName }</span>
+                        Your are logged in as <span style={ { color: "orange" } }>{ user.displayName }</span>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -125,7 +145,18 @@ const Dashboard = ( props ) => {
                     <Route path={ `${ path }/review` }>
                         <MyReview></MyReview>
                     </Route>
-
+                    <AdminRoute path={ `${ path }/makeAdmin` }>
+                        <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                    <AdminRoute path={ `${ path }/addWatch` }>
+                        <AddWatch></AddWatch>
+                    </AdminRoute>
+                    <AdminRoute path={ `${ path }/manageAllWatches` }>
+                        <ManageAllWatches></ManageAllWatches>
+                    </AdminRoute>
+                    <AdminRoute path={ `${ path }/manageAllOrders` }>
+                        <ManageAllOrders></ManageAllOrders>
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>
