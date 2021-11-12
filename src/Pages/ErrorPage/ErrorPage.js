@@ -1,12 +1,15 @@
 import { Box } from '@mui/material';
 import React from 'react';
-//import 404 image from the /src/images folder
-import errorPage from '../../images/404.png';
+import Footer from '../Shared/Footer/Footer';
+import Header from '../Shared/Header/Header';
+import ErrorPageMain from './ErrorPageMain';
 
 const ErrorPage = () => {
     return (
-        <Box sx={ { textAlign: 'center' } }>
-            <img style={ { maxHeight: '100vh' } } src={ errorPage } alt="errorPageImage" />
+        <Box>
+            <Header></Header>
+            <ErrorPageMain></ErrorPageMain>
+            <Footer></Footer>
         </Box>
     );
 };

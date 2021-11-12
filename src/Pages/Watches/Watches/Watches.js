@@ -1,22 +1,16 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
-import useWatches from '../../../Hooks/useWatches';
-import Watch from '../Watch/Watch';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
+import WatchesMain from './WatchesMain';
 
 const Watches = () => {
-    const [ watches ] = useWatches()
     return (
-        <Container sx={ { my: 10 } }>
-            <Typography variant="h2" sx={ { textAlign: 'center', my: 8, fontWeight: 'bold', color: '#CD5C5C' } }>Our Collections</Typography>
-            <Grid container spacing={ 4 }>
-                {
-                    watches.map( watch => <Watch
-                        key={ watch.id }
-                        watch={ watch }>
-                    </Watch> )
-                }
-            </Grid>
-        </Container>
+        <Box>
+            <Header></Header>
+            <WatchesMain></WatchesMain>
+            <Footer></Footer>
+        </Box>
     );
 };
 

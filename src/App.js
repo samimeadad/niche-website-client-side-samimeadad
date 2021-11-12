@@ -6,8 +6,6 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
-import Header from './Pages/Shared/Header/Header';
-import Footer from './Pages/Shared/Footer/Footer';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login';
@@ -24,7 +22,6 @@ function App () {
   return (
     <AuthProvider>
       <Router>
-        <Header></Header>
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -63,7 +60,6 @@ function App () {
             <ErrorPage></ErrorPage>
           </Route>
         </Switch>
-        <Footer></Footer>
       </Router>
     </AuthProvider>
   );

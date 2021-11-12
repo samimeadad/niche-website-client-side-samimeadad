@@ -1,5 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
 import BannerCarousel from '../Banner/BannerCarousel';
 import Gender from '../Gender/Gender';
@@ -10,12 +12,14 @@ import Subscribe from '../Subscribe/Subscribe';
 const Home = () => {
     return (
         <Box>
+            <Header></Header>
             <BannerCarousel></BannerCarousel>
             <Banner></Banner>
             <PremiumWatches></PremiumWatches>
             <Gender></Gender>
             <Reviews></Reviews>
             <Subscribe></Subscribe>
+            <Footer></Footer>
         </Box>
     );
 };

@@ -22,7 +22,7 @@ const useFirebase = () => {
                 setUser( newUser );
 
                 //save user information to the database
-                // saveUserToDb( email, name, 'POST' );
+                saveUserToDb( email, name, 'POST' );
 
                 //Send name to firebase after registration
                 updateProfile( auth.currentUser, {
@@ -63,8 +63,8 @@ const useFirebase = () => {
         setIsLoading( true );
         signInWithPopup( auth, googleProvider )
             .then( ( result ) => {
-                setUser( result.user );
-                // saveUserToDb( user.email, user.displayName, 'PUT' );
+                const user = result?.user;
+                saveUserToDb( user.email, user.displayName, 'PUT' );
                 const destination = location?.state?.from || '/';
                 history.replace( destination );
                 setAuthError( '' );
@@ -90,6 +90,24 @@ const useFirebase = () => {
         return () => unsubscribe();
     }, [ auth ] );
 
+    const saveUserToDb = ( email, displayName, method ) => {
+        const user = { email, displayName };
+        console.log( user );
+        fetch( 'http://localhost:5001/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify( user )
+        } )
+            .then( res => res.json() )
+            .then( data => {
+                if ( data.insertedId ) {
+                    alert( 'Thanks for the registration. Keep Watching!' );
+                }
+            } )
+    }
+
     // useEffect( () => {
     //     fetch( `https://salty-reef-03503.herokuapp.com/users/${ user.email }` )
     //         .then( res => res.json() )
@@ -105,18 +123,6 @@ const useFirebase = () => {
         } )
             .finally( () => setIsLoading( false ) );
     }
-
-    // const saveUserToDb = ( email, displayName, method ) => {
-    //     const user = { email, displayName };
-    //     fetch( 'https://salty-reef-03503.herokuapp.com/users', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify( user )
-    //     } )
-    //         .then()
-    // }
 
     return {
         user,
