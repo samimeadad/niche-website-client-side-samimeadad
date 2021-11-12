@@ -23,6 +23,20 @@ const SelectedWatch = () => {
     }
 
     const handlePlaceOrder = ( e ) => {
+        fetch( 'http://localhost:5001/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify( orderData )
+        } )
+            .then( res => res.json() )
+            .then( data => {
+                if ( data.insertedId ) {
+                    alert( 'Your order is placed successfully. Please wait for approval. Thank you.' );
+                    setOrderData( "" );
+                }
+            } )
         e.preventDefault();
     }
 
@@ -59,7 +73,7 @@ const SelectedWatch = () => {
                     <form onSubmit={ handlePlaceOrder }>
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="name"
+                            id="nameInput"
                             type="text"
                             label="Your Name"
                             name="name"
@@ -70,7 +84,7 @@ const SelectedWatch = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="email"
+                            id="emailInput"
                             type="email"
                             label="Your Email"
                             name="email"
@@ -81,7 +95,7 @@ const SelectedWatch = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="watchName"
+                            id="watchNameInput"
                             label="Watch Name"
                             type="text"
                             name="watchName"
@@ -92,7 +106,7 @@ const SelectedWatch = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="price"
+                            id="priceInput"
                             label="Price"
                             type="text"
                             name="price"
@@ -103,7 +117,7 @@ const SelectedWatch = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="address"
+                            id="addressInput"
                             label="Your Address"
                             type="text"
                             name="address"
@@ -113,7 +127,7 @@ const SelectedWatch = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="phone"
+                            id="phoneInput"
                             label="Your Phone Number"
                             type="text"
                             name="phone"

@@ -37,7 +37,7 @@ const Login = () => {
                     <form onSubmit={ handleLoginFormSubmit }>
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="standard-basic"
+                            id="emailInput"
                             label="Your Email"
                             name="email"
                             onBlur={ handleOnChange }
@@ -45,7 +45,7 @@ const Login = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="standard-password-input"
+                            id="passwordInput"
                             label="Password"
                             type="password"
                             name="password"

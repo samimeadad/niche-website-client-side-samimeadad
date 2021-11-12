@@ -40,7 +40,7 @@ const Register = () => {
                     { !isLoading && <form onSubmit={ handleRegisterFormSubmit }>
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="standard-basic"
+                            id="name-input"
                             type="text"
                             label="Your Name"
                             name="name"
@@ -49,7 +49,7 @@ const Register = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="standard-basic"
+                            id="email-input"
                             type="email"
                             label="Your Email"
                             name="email"
@@ -59,7 +59,7 @@ const Register = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="standard-password-input"
+                            id="password-input"
                             label="Password"
                             type="password"
                             name="password"
@@ -69,7 +69,7 @@ const Register = () => {
                         />
                         <TextField
                             sx={ { width: 1, m: 1 } }
-                            id="standard-password-confirm"
+                            id="password-confirm"
                             label="Confirm Password"
                             type="password"
                             name="passwordConfirm"

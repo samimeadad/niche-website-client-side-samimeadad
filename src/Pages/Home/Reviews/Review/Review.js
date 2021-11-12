@@ -23,7 +23,7 @@ const Review = ( props ) => {
                         <span>Rating: </span>{ rating }
                     </Typography>
                     <Stack spacing={ 1 }>
-                        <Rating name="half-rating-read" defaultValue={ rating } precision={ .05 } readOnly />
+                        <Rating name="half-rating-read" defaultValue={ rating } precision={ .1 } readOnly />
                     </Stack>
                 </CardContent>
             </Card>
