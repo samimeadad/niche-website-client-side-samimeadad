@@ -34,7 +34,7 @@ const RegisterPageMain = () => {
         <Container sx={ { my: 10 } }>
             <Grid container spacing={ 2 }>
                 <Grid item sx={ { mt: 10 } } xs={ 12 } sm={ 12 } md={ 6 } lg={ 6 }>
-                    <Typography sx={ { m: 1 } } variant="h4" gutterBottom component="div">
+                    <Typography sx={ { m: 1, color: '#CD5C5C', fontWeight: "bold" } } variant="h4" gutterBottom component="div">
                         Please Register Here
                     </Typography>
                     { !isLoading && <form onSubmit={ handleRegisterFormSubmit }>

@@ -35,11 +35,6 @@ const Header = () => {
                         About Us
                     </Link>
 
-                    <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
-                        to="/contact">
-                        Contact Us
-                    </Link>
-
                     {
                         !user.email ? <Link style={ { textDecoration: 'none', color: 'white', marginLeft: '10px', marginRight: '10px' } }
                             to="/login">

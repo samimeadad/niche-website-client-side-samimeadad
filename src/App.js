@@ -7,7 +7,6 @@ import {
 import Home from './Pages/Home/Home/Home';
 import About from './Pages/About/About';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
-import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login';
 import Watches from './Pages/Watches/Watches/Watches';
 import MenWatches from './Pages/Home/Gender/MenWatches';
@@ -46,9 +45,6 @@ function App () {
           </PrivateRoute>
           <Route path="/about">
             <About></About>
-          </Route>
-          <Route path="/contact">
-            <Contact></Contact>
           </Route>
           <Route path="/login">
             <Login></Login>
