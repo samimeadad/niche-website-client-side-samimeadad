@@ -7,7 +7,7 @@ import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 
 const Review = ( props ) => {
-    const { name, description, rating } = props.review;
+    const { name, reviewInput, rating } = props.review;
 
     return (
         <Grid item xs={ 12 } sm={ 12 } md={ 3 } lg={ 3 }>
@@ -17,7 +17,7 @@ const Review = ( props ) => {
                         { name }
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
-                        { description.slice( 0, 100 ) }
+                        { reviewInput?.slice( 0, 100 ) }
                     </Typography>
                     <Typography variant="h6" sx={ { color: '#CD5C5C' } }>
                         <span>Rating: </span>{ rating }
