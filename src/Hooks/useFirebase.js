@@ -114,6 +114,7 @@ const useFirebase = () => {
             .then( data => setAdmin( data.admin ) )
     }, [ user.email ] )
 
+    //Logout a user
     const logOut = () => {
         setIsLoading( true );
         signOut( auth ).then( () => {

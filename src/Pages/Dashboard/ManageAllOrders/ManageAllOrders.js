@@ -7,8 +7,9 @@ const ManageAllOrders = () => {
     const [ orders, setOrders ] = useOrders();
 
     const modifyStatus = ( id, status ) => {
+        console.log( id, status );
         const url = `https://damp-ridge-22727.herokuapp.com/orders/${ id }`;
-        console.log( url );
+
         fetch( url, {
             method: 'PUT',
             headers: {

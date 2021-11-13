@@ -2,18 +2,19 @@ import { Alert, Button, Container, TextField } from '@mui/material';
 import React, { useState } from 'react';
 
 const MakeAdmin = () => {
-    const [ adminEmail, setAdminEmail ] = useState( '' );
+    const [ email, setEmail ] = useState( '' );
+    const role = 'admin';
     const [ success, setSuccess ] = useState( false );
 
     const handleOnBlur = e => {
-        setAdminEmail( e.target.value );
+        setEmail( e.target.value );
     }
 
     const handleAdminSubmit = e => {
         e.preventDefault();
-        const user = { adminEmail };
+        const user = { email, role };
         console.log( user );
-        fetch( 'https://damp-ridge-22727.herokuapp.com/users/admin', {
+        fetch( 'https://damp-ridge-22727.herokuapp.com/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -24,6 +25,7 @@ const MakeAdmin = () => {
             .then( data => {
                 if ( data.modifiedCount ) {
                     setSuccess( true );
+                    console.log( data );
                 }
             } )
     }
