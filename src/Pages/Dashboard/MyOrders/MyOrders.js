@@ -43,25 +43,27 @@ const MyOrders = () => {
                     <TableHead>
                         <TableRow>
                             <TableCell>Customer Name</TableCell>
-                            <TableCell align="right">Customer Email</TableCell>
-                            <TableCell align="right">Purchased Products</TableCell>
-                            <TableCell align="right">Price</TableCell>
-                            <TableCell align="right">Action</TableCell>
+                            <TableCell align="left">Customer Email</TableCell>
+                            <TableCell align="left">Purchased Products</TableCell>
+                            <TableCell align="left">Price</TableCell>
+                            <TableCell align="left">Order Status</TableCell>
+                            <TableCell align="left">Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         { userOrder.map( ( row ) => (
                             <TableRow
-                                key={ row._id }
+                                key={ row?._id }
                                 sx={ { '&:last-child td, &:last-child th': { border: 0 } } }
                             >
                                 <TableCell component="th" scope="row">
-                                    { row.name }
+                                    { row?.name }
                                 </TableCell>
-                                <TableCell align="right">{ row.email }</TableCell>
-                                <TableCell align="right">{ row.watchName }</TableCell>
-                                <TableCell align="right">{ row.price }</TableCell>
-                                <TableCell align="right"><Button onClick={ () => deleteOrder( row._id ) }><Delete></Delete></Button>
+                                <TableCell align="left">{ row?.email }</TableCell>
+                                <TableCell align="left">{ row?.watchName }</TableCell>
+                                <TableCell align="left">{ row?.price }</TableCell>
+                                <TableCell align="left">{ row?.status }</TableCell>
+                                <TableCell align="left"><Button onClick={ () => deleteOrder( row?._id ) }><Delete></Delete></Button>
                                 </TableCell>
                             </TableRow>
                         ) ) }

@@ -57,6 +57,7 @@ const Dashboard = ( props ) => {
             <Divider sx={ { backgroundColor: "gray" } } />
             {
                 admin && <Box sx={ { display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' } }>
+                    <Link to="/home" style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Home</Button></Link>
                     <Link to={ `${ url }/makeAdmin` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Make Admin</Button></Link>
                     <Link to={ `${ url }/addWatch` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Add Watch</Button></Link>
                     <Link to={ `${ url }/manageAllWatches` } style={ { textDecoration: 'none' } }><Button sx={ { color: 'orange' } }>Manage All Watches</Button></Link>

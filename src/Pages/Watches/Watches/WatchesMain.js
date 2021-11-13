@@ -11,7 +11,7 @@ const WatchesMain = () => {
             <Grid container spacing={ 4 }>
                 {
                     watches.map( watch => <Watch
-                        key={ watch.id }
+                        key={ watch._id }
                         watch={ watch }>
                     </Watch> )
                 }

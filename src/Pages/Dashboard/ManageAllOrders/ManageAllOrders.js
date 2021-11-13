@@ -1,10 +1,29 @@
-import { Delete } from '@mui/icons-material';
+import { Delete, Edit } from '@mui/icons-material';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import React from 'react';
 import useOrders from '../../../Hooks/useOrders';
 
 const ManageAllOrders = () => {
     const [ orders, setOrders ] = useOrders();
+
+    const modifyStatus = ( id, status ) => {
+        const url = `https://damp-ridge-22727.herokuapp.com/orders/${ id }`;
+        console.log( url );
+        fetch( url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify( status )
+        } )
+            .then( res => res.json() )
+            .then( data => {
+                if ( data.modifiedCount > 0 ) {
+                    alert( 'Status Update Successful' );
+                    window.location.reload();
+                }
+            } )
+    }
 
     const deleteOrder = ( id ) => {
         const proceed = window.confirm( "Are you sure to delete the booking data?" );
@@ -33,25 +52,28 @@ const ManageAllOrders = () => {
                     <TableHead>
                         <TableRow>
                             <TableCell>Customer Name</TableCell>
-                            <TableCell align="right">Customer Email</TableCell>
-                            <TableCell align="right">Purchased Products</TableCell>
-                            <TableCell align="right">Price</TableCell>
-                            <TableCell align="right">Action</TableCell>
+                            <TableCell align="left">Customer Email</TableCell>
+                            <TableCell align="left">Purchased Products</TableCell>
+                            <TableCell align="left">Price</TableCell>
+                            <TableCell align="left">Status</TableCell>
+                            <TableCell align="left">Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         { orders.map( ( row ) => (
                             <TableRow
-                                key={ row._id }
+                                key={ row?._id }
                                 sx={ { '&:last-child td, &:last-child th': { border: 0 } } }
                             >
                                 <TableCell component="th" scope="row">
-                                    { row.name }
+                                    { row?.name }
                                 </TableCell>
-                                <TableCell align="right">{ row.email }</TableCell>
-                                <TableCell align="right">{ row.watchName }</TableCell>
-                                <TableCell align="right">{ row.price }</TableCell>
-                                <TableCell align="right"><Button onClick={ () => deleteOrder( row._id ) }><Delete></Delete></Button>
+                                <TableCell align="left">{ row?.email }</TableCell>
+                                <TableCell align="left">{ row?.watchName }</TableCell>
+                                <TableCell align="left">{ row?.price }</TableCell>
+                                <TableCell align="left"><Button onClick={ () => modifyStatus( row?._id, "Shipped" ) }>{ row?.status }<Edit></Edit></Button>
+                                </TableCell>
+                                <TableCell align="left"><Button onClick={ () => deleteOrder( row?._id ) }><Delete></Delete></Button>
                                 </TableCell>
                             </TableRow>
                         ) ) }

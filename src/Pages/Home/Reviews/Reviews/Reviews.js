@@ -13,7 +13,7 @@ const Reviews = () => {
             <Grid container spacing={ 2 }>
                 {
                     reviews.map( review => <Review
-                        key={ review.id }
+                        key={ review._id }
                         review={ review }>
                     </Review> )
                 }
