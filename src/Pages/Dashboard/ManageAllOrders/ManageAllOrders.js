@@ -54,7 +54,8 @@ const ManageAllOrders = () => {
                             <TableCell align="left">Customer Email</TableCell>
                             <TableCell align="left">Purchased Products</TableCell>
                             <TableCell align="left">Price</TableCell>
-                            <TableCell align="left">Status</TableCell>
+                            <TableCell align="left">Order Status</TableCell>
+                            <TableCell align="left">Update Status</TableCell>
                             <TableCell align="left">Delete</TableCell>
                         </TableRow>
                     </TableHead>
@@ -70,7 +71,8 @@ const ManageAllOrders = () => {
                                 <TableCell align="left">{ row?.email }</TableCell>
                                 <TableCell align="left">{ row?.watchName }</TableCell>
                                 <TableCell align="left">{ row?.price }</TableCell>
-                                <TableCell align="left"><Button onClick={ () => modifyStatus( row?._id, "Shipped" ) }>{ row?.status }<Edit></Edit></Button>
+                                <TableCell align="left">{ row?.status }</TableCell>
+                                <TableCell align="left"><Button onClick={ () => modifyStatus( row?._id, "Shipped" ) }><Edit></Edit></Button>
                                 </TableCell>
                                 <TableCell align="left"><Button onClick={ () => deleteOrder( row?._id ) }><Delete></Delete></Button>
                                 </TableCell>

@@ -27,7 +27,7 @@ const ManageAllWatches = () => {
 
     return (
         <div>
-            <h2>Total orders: { watches.length }</h2>
+            <h2>Total Watches: { watches.length }</h2>
             <TableContainer component={ Paper }>
                 <Table sx={ {} } aria-label="orders Table">
                     <TableHead>

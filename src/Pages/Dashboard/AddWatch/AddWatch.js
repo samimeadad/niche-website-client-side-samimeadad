@@ -88,7 +88,7 @@ const AddWatch = () => {
                     sx={ { width: 1, m: 1 } }
                     id="genderInput"
                     type="text"
-                    label="For Male or Female"
+                    label="For Male or Female (m=male, f=female)"
                     name="gender"
                     variant="standard"
                     required
