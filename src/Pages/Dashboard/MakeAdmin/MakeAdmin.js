@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 const MakeAdmin = () => {
     const [ email, setEmail ] = useState( '' );
-    const role = 'admin';
     const [ success, setSuccess ] = useState( false );
+    const role = 'admin';
 
     const handleOnBlur = e => {
         setEmail( e.target.value );
