@@ -1,4 +1,4 @@
-import { CircularProgress } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import React from 'react';
 import { Redirect, Route } from 'react-router';
 import useAuth from '../Hooks/useAuth';
@@ -8,8 +8,9 @@ import useAuth from '../Hooks/useAuth';
 const PrivateRoute = ( { children, ...rest } ) => {
     const { user, isLoading } = useAuth();
 
+    //define a circular progress element with Material UI while the data is being loaded
     if ( isLoading ) {
-        return <div className="text-center my-5"><CircularProgress color="error" /></div>
+        return <Box sx={ { textAlign: 'center', my: 6 } }><CircularProgress color="error" /></Box>
     }
 
     //return the route to login if the user is not logged in

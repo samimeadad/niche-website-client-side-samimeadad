@@ -9,6 +9,7 @@ import PremiumWatches from '../PremiumWatches/PremiumWatches';
 import Reviews from '../Reviews/Reviews/Reviews';
 import Subscribe from '../Subscribe/Subscribe';
 
+//all the components of Home page is rendered here
 const Home = () => {
     return (
         <Box>

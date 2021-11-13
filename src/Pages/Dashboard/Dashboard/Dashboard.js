@@ -24,6 +24,7 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 
 const drawerWidth = 200;
 
+//define the function for Dashboard and the left side panel (drawer). User and Admin will see the different contents and menu in this page. Conditional rendering is used to show the different contents and menu.
 const Dashboard = ( props ) => {
     const { user, logOut, admin } = useAuth();
     let { path, url } = useRouteMatch();

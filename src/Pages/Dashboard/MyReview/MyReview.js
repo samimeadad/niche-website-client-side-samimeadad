@@ -2,6 +2,8 @@ import { Box, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
+
+//Define the function for a user to give his feedback/review. the review will be added to the homepage as soon as the user posts it.
 const MyReview = () => {
     const [ reviewData, setReviewData ] = useState( {} );
     const { user } = useAuth();

@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper';
 import { Delete } from '@mui/icons-material';
 import { Button } from '@mui/material';
 
+//Define the function for a normal user to check his/her orders in this page. He can check the status of his/her orders and can remove a order accordingly.
 const MyOrders = () => {
     const [ orders, setOrders ] = useOrders();
     const { user } = useAuth();

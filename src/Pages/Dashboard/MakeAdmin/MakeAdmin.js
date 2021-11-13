@@ -1,15 +1,18 @@
 import { Alert, Button, Container, TextField } from '@mui/material';
 import React, { useState } from 'react';
 
+//Define the function for make admin component
 const MakeAdmin = () => {
     const [ email, setEmail ] = useState( '' );
     const [ success, setSuccess ] = useState( false );
     const role = 'admin';
 
+    //store the inputted email to the state variable
     const handleOnBlur = e => {
         setEmail( e.target.value );
     }
 
+    //send the email to the backend and update the user information accordingly
     const handleAdminSubmit = e => {
         e.preventDefault();
         const user = { email, role };

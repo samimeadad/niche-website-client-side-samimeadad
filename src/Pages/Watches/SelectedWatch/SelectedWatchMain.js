@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import useWatches from '../../../Hooks/useWatches';
 
+//define the component for a user to select a watch and submit the form to place an order.
 const SelectedWatchMain = () => {
     const { watchId } = useParams()
     const [ watches ] = useWatches();

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png';
 
+//footer component
 const Footer = () => {
     return (
         <footer style={ { backgroundColor: "#17202A" } }>

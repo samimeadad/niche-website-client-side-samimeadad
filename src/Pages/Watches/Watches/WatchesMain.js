@@ -3,6 +3,7 @@ import React from 'react';
 import useWatches from '../../../Hooks/useWatches';
 import Watch from '../Watch/Watch';
 
+//individual watch card imported from material ui and displayed on the client side
 const WatchesMain = () => {
     const [ watches ] = useWatches()
     return (

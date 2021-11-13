@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
+//the online payment system is not integrated right now. We are working on it. as soon as the payment system is implemented, this page will be updated accordingly.
 const Payment = () => {
     return (
         <Box>

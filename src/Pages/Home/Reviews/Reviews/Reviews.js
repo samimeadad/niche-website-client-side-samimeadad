@@ -3,7 +3,7 @@ import React from 'react';
 import useReviews from '../../../../Hooks/useReviews';
 import Review from '../Review/Review';
 
-
+//all the reviews is displayed on the home page from the database. as soon as any new review is posted, it will be displayed here as well.
 const Reviews = () => {
     const [ reviews ] = useReviews();
 

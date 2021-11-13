@@ -4,6 +4,7 @@ import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 import LoginPageMain from './LoginPageMain';
 
+//Login page with header and footer
 const Login = () => {
     return (
         <Box>

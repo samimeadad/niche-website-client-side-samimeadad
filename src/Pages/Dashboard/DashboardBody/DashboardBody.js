@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
+//Define the function for the dashboard body. This is the main body of the dashboard. User and Admin will see the different contents and menu here.
 const DashboardBody = () => {
     const { admin } = useAuth();
 

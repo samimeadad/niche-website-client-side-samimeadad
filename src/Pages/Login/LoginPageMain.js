@@ -4,6 +4,8 @@ import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import loginImage from '../../images/login.jpg';
 
+
+//define the function for user/password and google login
 const LoginPageMain = () => {
     const [ loginData, setLoginData ] = useState( {} );
     const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();

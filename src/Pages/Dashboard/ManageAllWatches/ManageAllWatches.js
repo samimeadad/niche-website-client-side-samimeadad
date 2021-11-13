@@ -3,9 +3,11 @@ import useWatches from '../../../Hooks/useWatches';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { Delete } from '@mui/icons-material';
 
+//define the function for admins to manage all watches. An admin can remove a watch data from the database from this page.
 const ManageAllWatches = () => {
     const [ watches, setWatches ] = useWatches();
 
+    //define the function for delete operation. The database will be updated after the function is called.
     const deleteWatch = ( id ) => {
         const proceed = window.confirm( "Are you sure to delete the watch data?" );
         if ( proceed ) {

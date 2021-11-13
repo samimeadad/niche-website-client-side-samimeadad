@@ -4,6 +4,8 @@ import { NavLink, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import registerImage from '../../images/register.jpg';
 
+
+//define the register function with user and password. 
 const RegisterPageMain = () => {
     const [ registerData, setRegisterData ] = useState( {} );
     const { user, registerUser, isLoading, authError } = useAuth();

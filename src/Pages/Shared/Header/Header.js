@@ -9,6 +9,7 @@ import { Home, Login } from '@mui/icons-material';
 import useAuth from '../../../Hooks/useAuth';
 import { Button } from '@mui/material';
 
+//heder component. This component is not responsive for mobile and tablets. Sorry for the inconvenience.
 const Header = () => {
     const { user, logOut } = useAuth();
 

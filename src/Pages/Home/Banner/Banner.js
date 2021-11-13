@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import bannerImage from '../../../images/bannerImage.jpeg'
 
+//Banner image and text
 const Banner = () => {
     return (
         <Grid container spacing={ 2 } sx={ { mt: 4 } }>

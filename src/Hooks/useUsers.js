@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// custom hook for orders api call
+// custom hook for users api call
 const useUsers = () => {
     const [ users, setUsers ] = useState( [] );
 
@@ -10,7 +10,7 @@ const useUsers = () => {
             .then( data => setUsers( data ) );
     }, [] );
 
-    //return orders state variable and setOrders function
+    //return users state variable and setUsers function
     return [ users, setUsers ];
 }
 

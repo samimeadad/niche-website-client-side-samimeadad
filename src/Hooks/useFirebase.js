@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, updateProfile, signOut } from "firebase/auth";
 import initializeFirebaseAuthentication from "../Firebase/firebase.init";
 
+//Call the initializeFirebaseAuthentication function to initialize the firebase authentication from the firebase.init file
 initializeFirebaseAuthentication();
 
 const useFirebase = () => {
@@ -11,8 +12,10 @@ const useFirebase = () => {
     const [ authError, setAuthError ] = useState( '' );
     const [ admin, setAdmin ] = useState( false );
 
+    //define the google authentication provider
     const googleProvider = new GoogleAuthProvider();
 
+    //Define the function for the new user registration with email and password
     const registerUser = ( email, password, name, history ) => {
         setIsLoading( true );
         createUserWithEmailAndPassword( auth, email, password )
@@ -43,6 +46,7 @@ const useFirebase = () => {
             } );
     }
 
+    //Define the function for the user login with email and password
     const loginUser = ( email, password, location, history ) => {
         setIsLoading( true );
         signInWithEmailAndPassword( auth, email, password )
@@ -59,6 +63,7 @@ const useFirebase = () => {
             } );
     }
 
+    //Define the function for the user login with google
     const signInWithGoogle = ( location, history ) => {
         setIsLoading( true );
         signInWithPopup( auth, googleProvider )
@@ -90,6 +95,7 @@ const useFirebase = () => {
         return () => unsubscribe();
     }, [ auth ] );
 
+    //Define the function to save the registered user information to the database
     const saveUserToDb = ( email, displayName, method ) => {
         const user = { email, displayName };
         fetch( 'https://damp-ridge-22727.herokuapp.com/users', {
@@ -107,14 +113,14 @@ const useFirebase = () => {
             } )
     }
 
-    //Collect the user information to check the user is admin or not
+    //Collect the user information to check the user is admin or not (setAdmin true or false)
     useEffect( () => {
         fetch( `https://damp-ridge-22727.herokuapp.com/users/${ user.email }` )
             .then( res => res.json() )
             .then( data => setAdmin( data.admin ) )
     }, [ user.email ] )
 
-    //Logout a user
+    //Define a function for user logout
     const logOut = () => {
         setIsLoading( true );
         signOut( auth ).then( () => {
@@ -125,6 +131,7 @@ const useFirebase = () => {
             .finally( () => setIsLoading( false ) );
     }
 
+    //return all the necessary variables and function for external use
     return {
         user,
         admin,

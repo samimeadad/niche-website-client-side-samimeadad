@@ -4,6 +4,7 @@ import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import WatchesMain from './WatchesMain';
 
+//all watches page with header and footer
 const Watches = () => {
     return (
         <Box>

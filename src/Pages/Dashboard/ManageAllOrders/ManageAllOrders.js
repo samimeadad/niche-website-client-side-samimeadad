@@ -3,6 +3,7 @@ import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, 
 import React from 'react';
 import useOrders from '../../../Hooks/useOrders';
 
+//Manage all order for admins. they can check all orders, delete any order and change the status of a order to shipped.
 const ManageAllOrders = () => {
     const [ orders, setOrders ] = useOrders();
 

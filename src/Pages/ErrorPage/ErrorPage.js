@@ -4,6 +4,7 @@ import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 import ErrorPageMain from './ErrorPageMain';
 
+//Error page with header and footer
 const ErrorPage = () => {
     return (
         <Box>

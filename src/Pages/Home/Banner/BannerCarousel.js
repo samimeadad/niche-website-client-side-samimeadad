@@ -8,7 +8,7 @@ import image4 from '../../../images/banner-carousel/4.jpeg';
 import image5 from '../../../images/banner-carousel/5.jpeg';
 import image6 from '../../../images/banner-carousel/6.jpeg';
 
-
+//banner carousel. It is fun to work with carousel in Material UI. Though some bugs still in the library.
 const BannerCarousel = () => {
     return (
         <Grid container spacing={ 2 }>

@@ -1,9 +1,11 @@
 import { Button, Container, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
+//function for add watch component
 const AddWatch = () => {
     const [ watchInfo, setWatchInfo ] = useState( {} );
 
+    //function for handling watch information change in the input form
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -13,6 +15,7 @@ const AddWatch = () => {
         e.preventDefault();
     }
 
+    //Define the function to submit the form and add a watch to the watch collection in the database
     const handleAddWatch = e => {
         fetch( 'https://damp-ridge-22727.herokuapp.com/watches', {
             method: 'POST',

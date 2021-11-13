@@ -3,6 +3,7 @@ import React from 'react';
 import useWatches from '../../../Hooks/useWatches';
 import Watch from '../../Watches/Watch/Watch';
 
+//collect all the female watch form database with condition gender===f
 const WomenWatchesMain = () => {
     const [ watches ] = useWatches();
     const womenWatches = watches.filter( watch => watch.gender === "f" );

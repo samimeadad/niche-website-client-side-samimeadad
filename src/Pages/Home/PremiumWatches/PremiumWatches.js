@@ -3,6 +3,8 @@ import React from 'react';
 import useWatches from '../../../Hooks/useWatches';
 import Watch from '../../Watches/Watch/Watch';
 
+
+//premium watch section on the Home page
 const PremiumWatches = () => {
     const [ watches ] = useWatches();
     const premiumWatches = watches.filter( watch => watch.premium === "true" );

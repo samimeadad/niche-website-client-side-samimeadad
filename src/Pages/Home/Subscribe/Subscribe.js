@@ -3,6 +3,7 @@ import { Box, Button, Container, Grid, TextField, Typography } from '@mui/materi
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//subscribe and follow us section on the home page
 const Subscribe = () => {
     return (
         <Container sx={ { my: 10, width: '100%', textAlign: 'center' } }>
