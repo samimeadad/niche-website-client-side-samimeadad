@@ -13,7 +13,6 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
         e.preventDefault();
         const user = { email, role };
-        console.log( user );
         fetch( 'https://damp-ridge-22727.herokuapp.com/users', {
             method: 'PUT',
             headers: {
@@ -25,7 +24,6 @@ const MakeAdmin = () => {
             .then( data => {
                 if ( data.modifiedCount ) {
                     setSuccess( true );
-                    console.log( data );
                 }
             } )
     }

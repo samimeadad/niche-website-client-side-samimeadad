@@ -13,8 +13,6 @@ const AddWatch = () => {
         e.preventDefault();
     }
 
-    console.log( watchInfo );
-
     const handleAddWatch = e => {
         fetch( 'https://damp-ridge-22727.herokuapp.com/watches', {
             method: 'POST',

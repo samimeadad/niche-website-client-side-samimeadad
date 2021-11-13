@@ -6,16 +6,14 @@ import useOrders from '../../../Hooks/useOrders';
 const ManageAllOrders = () => {
     const [ orders, setOrders ] = useOrders();
 
-    const modifyStatus = ( id, status ) => {
-        console.log( id, status );
-        const url = `https://damp-ridge-22727.herokuapp.com/orders/${ id }`;
-
-        fetch( url, {
+    const modifyStatus = ( _id, status ) => {
+        const updatedOrder = { _id, status };
+        fetch( "https://damp-ridge-22727.herokuapp.com/orders", {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify( status )
+            body: JSON.stringify( updatedOrder )
         } )
             .then( res => res.json() )
             .then( data => {
